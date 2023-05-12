@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKD Prediction Model</title>
+   
+    <style>
+        .imageDiv {
+            display: flex;
+            align-items: center;
+            margin-left: 140px;
+        }
+        
+        .logo {
+            margin-bottom: 10px;
+            background-color: aliceblue;
+            margin-left: 5px;
+        }
+        
+        
+        td {
+            /* padding-bottom: 10px; */
+            text-align: center;
+        }
+        
+        table {
+            width: 90%;
+        }
+        
+        .lf-container {
+            margin-left: 140px;
+        }
+        
+        .kidneyImage {
+            height: 350px;
+            width: 700px;
+        }
+        
+        .header {
+            display: flex;
+            margin-top: 50px;
+        }
+        
+        #full-container {
+            margin-top: 40px;
+        }
+        
+        
+        .click-btn-div {
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            padding:40px;
+            border-radius:40px;
+            margin-left:20px;
+            margin-right:20px;
+
+        }
+        .click-btn-div h4{
+            width:450px;
+           
+        }
+        
+        .click-btn {
+            margin-top: 0px;
+            margin-left: 10px;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #F6A40B;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+        
+        .line {
+            /* color: rgb(23, 87, 112); */
+            background-color: rgb(23, 87, 112);
+            height: 0.5px;
+            width: 95%;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .click-btn:hover {
+            box-shadow: 2px 2px 8px 4px black;
+            background-color:rgb(15, 64, 83);
+        }
+        
+        * {
+            background-color: aliceblue;
+            font-family: sans-serif;
+        }
+        
+        .container-heading {
+            margin-top: 100px;
+            background-color: rgb(167, 233, 253);
+            color: rgb(26, 102, 165);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 2px 3px 2px white;
+        }
+        
+        h4 {
+            color: rgb(13, 67, 77);
+            font-size: 20px;
+            font-weight: 500;
+        }
+        h3{
+            font-size: 20px;
+            font-weight: 500;
+            color:rgb(15, 64, 83);
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .container {
+            position: relative;
+            background-color: rgb(167, 233, 253);
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 30px;
+            width: 150px;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid rgb(15, 64, 83);
+        }
+        
+        #sub {
+            width: 120px;
+            height: 43px;
+            /* text-align: center; */
+            border:none;
+            border-radius: 14px;
+            font-size: 18px;
+            background-color: rgb(13, 67, 77);
+            color: white;
+            margin-bottom: 40px;
+        }
+        .description h3{
+            font-size:22px;
+            font-weight:550;
+        }
+        .description{
+            margin-top:30px;
+            text-align:left;
+            margin-left:20px;
+            width:700px;
+        }
+        .description h4{
+            font-size:18px;
+            color:#344867;
+            font-weight:200;
+            font-family:sans-serif;
+        }
+        li{
+            color:#344867;
+            font-size:18px;
+            font-weight:200;
+            font-family:sans-serif;
+            line-height:22px;
+        }
+        .description-container{
+            display:flex;
+        }
+        .doctor-img{
+            height:300px;
+            width:450px;
+            margin-top:100px;
+        }
+        .doctor-image-div{
+            margin-top:50px;
+            margin-left:50px;
+            background-color:#ACCDDF
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h2 class="container-heading">
+               Chronic Kidney Disease Prediction
+            </h2>
+        </div>
+    <div class="kidneyImageDiv">
+        <img class="kidneyImage" src="static/kidney_disease_predicition_image.jpg">
+    </div>
+    </div>
+    <div class="description-container">
+    <div class ="description">
+    <h3>Chronic Kidney Failure</h3>
+    <h4>Chronic kidney failure means a progressive and persistent deterioration in renal function. This means the problem starts lightly, develops slowly, and may even reach the point where you require renal replacement therapy (transplantation or dialysis).</h4>
+    <br>
+    <h3>Causes of Chronic Kidney Failure</h3>
+    <h4>What causes chronic kidney failure? Like mentioned earlier, chronic kidney failure is persistent and progressive. In other words, it doesn’t happen overnight.Chronic kidney failure often results from chronic kidney disease (CKD), which usually stems from an underlying health condition that slowly damages the kidneys.The two most common reasons for kidney failure from chronic kidney disease are diabetes, particularly Type 2, and hypertension.</h4>
+    <br>
+        <h3>Generally, kidney treatment involves:</h3>
+        <ul>
+            <li>Controlling any underlying health condition you might have, such as hypertension and high blood sugar.</li><br>
+            <li>Quitting smoking</li><br>
+            <li>Staying physically active. Note: only choose an exercise routine approved by your doctor. Typically, staying physically active means exercising for 30 minutes daily for five days a week.</li><br>
+            <li>Taking medicines prescribed by your doctor to protect your kidneys</li><br>
+            <li>Being in constant communication with your physician and nephrologist (a doctor specializing in kidney health)</li>
+        </ul>
+    </div>
+        <div class="doctor-image-div">
+            <img class="doctor-img" src="static/doctor.png">
+            <div class = "click-btn-div">
+                <h4>Tap below to check wheather you have a chronic kidney disease</h4>
+                <button class="click-btn" onclick="myFun()">Click here</button>
+            </div>  
+        </div>
+    </div>
+        <div id="full-container">
+            <hr class="line">
+            <form action='/predict' method="POST">
+                <div class="lf-container">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class ="imageDiv">
+                                <h3>Age</h3><img class="logo" src="static/age-logo.png" height="40px" width="40px" /></div>
+                                <input id="first" name="age" placeholder="age" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <div class ="imageDiv">
+                                    <h3>Blood Pressure</h3>   
+                                <img class="logo" src="static/bp-logo-removebg-preview.png" height="30px" width="30px" />
+                                </div>
+                                <input id="first" name="bp" placeholder="Ex:(50,70)" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Specific Gravity</h3>
+                                <input id="first" name="sg" placeholder="Ex: (1.005,1.010)" required="required">
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Albumin</h3>  
+                                <input id="first" name="al" placeholder="(0,1,2,3,4,5)" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Sugar</h3>
+                                <input id="first" name="su" placeholder="(0,1,2,3,4,5)" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Red Blood Cells</h3>
+                                <input id="first" name="rbc" placeholder="Yes = 1, No=0" required="required">
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Pus Cells</h3>
+                                <input id="first" name="pc" placeholder="Yes = 1, No=0" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Pus Cell Clumps</h3>
+                                <input id="first" name="pcc" placeholder="Yes = 1, No=0" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Bacteria</h3>
+                                <input id="first" name="ba" placeholder="Yes = 1, No=0" required="required">
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Blood Glucose Random</h3>
+                                <input id="first" name="bgr" placeholder="in gms" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Blood Urea</h3>
+                                <input id="first" name="bu" placeholder="in gms" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Serum Creatinine</h3>
+                                <input id="first" name="sc" placeholder="Ex: (1.1,5.7,7.2)" required="required">
+                                <br>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Sodium </h3>
+                                <input id="first" name="sod" placeholder="in gms" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Potassium</h3>
+                                <input id="first" name="pot" placeholder="Ex: (5.1,5.7,4.2)" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Hemoglobin</h3>
+                                <input id="first" name="hemo" placeholder="in gms" required="required">
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Packed Cell Volume</h3>
+                                <input id="first" name="pcv" placeholder="Ex: (38, 45, 68)" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>White Blood Cell Count</h3>
+                                <input id="first" name="wc" placeholder="in numbers" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Red Blood Cells</h3>
+                                <input id="first" name="rc" placeholder="Yes = 1, No=0" required="required">
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Hyper Tension</h3>
+                                <input id="first" name="htn" placeholder="Yes = 1, No=0" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Diabetes Mellitus</h3>
+                                <input id="first" name="dm" placeholder="Yes = 1, No=0" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Coronary Artery Disease </h3>
+                                <input id="first" name="ca" placeholder="Yes= 1, No = 0" required="required">
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Appetite</h3>
+                                <input id="first" name="appet" placeholder="Good = 1, Poor = 0" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Peda Edema</h3>
+                                <input id="first" name="pe" placeholder="Yes = 1, No=0" required="required">
+                                <br>
+                            </td>
+                            <td>
+                                <h3>Aanemia</h3>
+                                <input id="first" name="ane" placeholder="Yes = 1, No=0" required="required">
+                                <br>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                    <br>
+                    <br>
+                   
+                </div>
+                <button id="sub" type="submit">Submit</button>
+            </form>
+    </div>
+<script src="static/script/script.js"></script>
+</body>
+</html>
